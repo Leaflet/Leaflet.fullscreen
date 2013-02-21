@@ -1,0 +1,8 @@
+.leaflet-container:-webkit-full-screen {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.leaflet-control-fullscreen a {
+    background-image: url(leaflet.fullscreen.png);
+}

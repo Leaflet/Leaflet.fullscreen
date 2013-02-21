@@ -48,12 +48,13 @@ L.Map.include({
                 document.webkitCancelFullScreen();
             }
         } else {
-            if (document.documentElement.requestFullscreen) {
-                this.getContainer().requestFullscreen();
-            } else if (document.documentElement.mozRequestFullScreen) {
-                this.getContainer().mozRequestFullScreen();
-            } else if (document.documentElement.webkitRequestFullscreen) {
-                this.getContainer().webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+            var container = this.getContainer();
+            if (container.requestFullscreen) {
+                container.requestFullscreen();
+            } else if (container.mozRequestFullScreen) {
+                container.mozRequestFullScreen();
+            } else if (container.webkitRequestFullscreen) {
+                container.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
             }
         }
     }

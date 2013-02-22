@@ -87,13 +87,15 @@ L.Map.addInitHook(function () {
         fullscreenchange = 'webkitfullscreenchange';
     }
 
-    this.on('load', function () {
-        L.DomEvent.on(document, fullscreenchange, this._onFullscreenChange, this);
-    });
+    if (fullscreenchange) {
+        this.on('load', function () {
+            L.DomEvent.on(document, fullscreenchange, this._onFullscreenChange, this);
+        });
 
-    this.on('unload', function () {
-        L.DomEvent.off(document, fullscreenchange, this._onFullscreenChange);
-    });
+        this.on('unload', function () {
+            L.DomEvent.off(document, fullscreenchange, this._onFullscreenChange);
+        });
+    }
 });
 
 L.control.fullscreen = function (options) {

@@ -40,8 +40,8 @@ L.Map.include({
 
     toggleFullscreen: function () {
         if (this.isFullscreen()) {
-            if (document.cancelFullScreen) {
-                document.cancelFullScreen();
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
             } else if (document.mozCancelFullScreen) {
                 document.mozCancelFullScreen();
             } else if (document.webkitCancelFullScreen) {

@@ -27,15 +27,7 @@ L.Control.Fullscreen = L.Control.extend({
 
 L.Map.include({
     isFullscreen: function () {
-        if ('fullscreenElement' in document) {
-            return document.fullscreenElement === this.getContainer();
-        } else if ('mozFullScreenElement' in document) {
-            return document.mozFullScreenElement === this.getContainer();
-        } else if ('webkitFullscreenElement' in document) {
-            return document.webkitFullscreenElement === this.getContainer();
-        } else {
-            return false;
-        }
+        return this._isFullscreen;
     },
 
     toggleFullscreen: function () {
@@ -57,6 +49,21 @@ L.Map.include({
                 container.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
             }
         }
+    },
+
+    _onFullscreenChange: function () {
+        var fullscreenElement =
+            document.fullscreenElement ||
+            document.mozFullScreenElement ||
+            document.webkitFullscreenElement;
+
+        if (fullscreenElement === this.getContainer()) {
+            this._isFullscreen = true;
+            this.fire('fullscreenchange');
+        } else if (this._isFullscreen) {
+            this._isFullscreen = false;
+            this.fire('fullscreenchange');
+        }
     }
 });
 
@@ -69,6 +76,24 @@ L.Map.addInitHook(function () {
         this.fullscreenControl = new L.Control.Fullscreen();
         this.addControl(this.fullscreenControl);
     }
+
+    var fullscreenchange;
+
+    if ('onfullscreenchange' in document) {
+        fullscreenchange = 'fullscreenchange';
+    } else if ('onmozfullscreenchange' in document) {
+        fullscreenchange = 'mozfullscreenchange';
+    } else if ('onwebkitfullscreenchange' in document) {
+        fullscreenchange = 'webkitfullscreenchange';
+    }
+
+    this.on('load', function () {
+        L.DomEvent.on(document, fullscreenchange, this._onFullscreenChange, this);
+    });
+
+    this.on('unload', function () {
+        L.DomEvent.off(document, fullscreenchange, this._onFullscreenChange);
+    });
 });
 
 L.control.fullscreen = function (options) {

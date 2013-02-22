@@ -1648,6 +1648,9 @@ L.Map = L.Class.extend({
 	},
 
 	remove: function () {
+		if (this._loaded) {
+			this.fire('unload');
+		}
 		this._initEvents('off');
 		delete this._container._leaflet;
 		return this;
@@ -8304,12 +8307,12 @@ L.Map.include({
 	},
 
 	_handleGeolocationResponse: function (pos) {
-		var latAccuracy = 180 * pos.coords.accuracy / 4e7,
-		    lngAccuracy = latAccuracy * 2,
-
-		    lat = pos.coords.latitude,
+		var lat = pos.coords.latitude,
 		    lng = pos.coords.longitude,
 		    latlng = new L.LatLng(lat, lng),
+
+		    latAccuracy = 180 * pos.coords.accuracy / 40075017,
+		    lngAccuracy = latAccuracy / Math.cos(L.LatLng.DEG_TO_RAD * lat),
 
 		    sw = new L.LatLng(lat - latAccuracy, lng - lngAccuracy),
 		    ne = new L.LatLng(lat + latAccuracy, lng + lngAccuracy),
@@ -8322,11 +8325,12 @@ L.Map.include({
 			this.setView(latlng, zoom);
 		}
 
-		this.fire('locationfound', {
+		var event = L.extend({
 			latlng: latlng,
-			bounds: bounds,
-			accuracy: pos.coords.accuracy
-		});
+			bounds: bounds
+		}, pos.coords);
+
+		this.fire('locationfound', event);
 	}
 });
 

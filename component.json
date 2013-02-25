@@ -2,7 +2,7 @@
   "name": "Leaflet.fullscreen",
   "repo": "mapbox/Leaflet.fullscreen",
   "description": "a fullscreen control for Leaflet",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "keywords": [],
   "dependencies": {},
   "development": {},

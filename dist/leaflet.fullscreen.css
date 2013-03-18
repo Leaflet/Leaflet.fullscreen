@@ -9,6 +9,7 @@
     height: 100% !important;
     top: 0px !important;
     left: 0px !important;
+    z-index:99999;
 }
 
 .leaflet-control-fullscreen a {

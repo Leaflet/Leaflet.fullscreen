@@ -6,7 +6,7 @@ L.Control.Fullscreen = L.Control.extend({
 
     onAdd: function (map) {
         var container = L.DomUtil.create('div', 'leaflet-control-fullscreen leaflet-bar leaflet-control'),
-            link = L.DomUtil.create('a', 'leaflet-control-fullscreen-button leaflet-bar-part', container);
+            link = L.DomUtil.create('a', 'leaflet-control-fullscreen-button leaflet-bar-part leaflet-bar-part-bottom', container);
 
         this._map = map;
 

@@ -1,13 +1,13 @@
 {
   "name": "leaflet-fullscreen",
-  "version": "0.0.0",
-  "description": "a fullscreen control for Leaflet",
+  "version": "0.0.1",
+  "description": "A fullscreen control for Leaflet",
   "main": "src/Leaflet.fullscreen.js",
   "directories": {
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jshint index.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,10 @@
     "fullscreen",
     "client"
   ],
+  "devDependencies": {
+    "uglify-js": "2.4.3",
+    "jshint": "2.3.0"
+  },
   "author": "John Firebaugh",
   "license": "BSD",
   "gitHead": "440a832850e205f4ab30ef185c905d153eaec14e",

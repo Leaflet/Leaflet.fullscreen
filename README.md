@@ -12,8 +12,8 @@ var map = new L.Map('map', {
 ### API
 
 ``` js
-L.Map#isFullscreen() // Is the map fullscreen?
-L.Map#toggleFullscreen() // Either go fullscreen, or cancel the existing fullscreen.
+L.Map.isFullscreen() // Is the map fullscreen?
+L.Map.toggleFullscreen() // Either go fullscreen, or cancel the existing fullscreen.
 
 // `fullscreenchange` Event that's fired when entering or exiting fullscreen.
 map.on('fullscreenchange', function () {

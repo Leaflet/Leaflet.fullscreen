@@ -41,7 +41,7 @@ L.Map.include({
                 document.webkitCancelFullScreen();
             } else {
                 L.DomUtil.removeClass(container, 'leaflet-pseudo-fullscreen');
-                this._toggleClass();
+                this._toggleFullscreenClass();
                 this.invalidateSize();
                 this._isFullscreen = false;
                 this.fire('fullscreenchange');
@@ -55,7 +55,7 @@ L.Map.include({
                 container.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
             } else {
                 L.DomUtil.addClass(container, 'leaflet-pseudo-fullscreen');
-                this._toggleClass();
+                this._toggleFullscreenClass();
                 this.invalidateSize();
                 this._isFullscreen = true;
                 this.fire('fullscreenchange');
@@ -63,7 +63,7 @@ L.Map.include({
         }
     },
 
-    _toggleClass: function() {
+    _toggleFullscreenClass: function() {
         var container = this.getContainer();
         if (this.isFullscreen()) {
             L.DomUtil.removeClass(container, 'leaflet-fullscreen-on');
@@ -78,7 +78,7 @@ L.Map.include({
             document.mozFullScreenElement ||
             document.webkitFullscreenElement;
 
-        this._toggleClass();
+        this._toggleFullscreenClass();
         if (fullscreenElement === this.getContainer()) {
             this._isFullscreen = true;
             this.fire('fullscreenchange');

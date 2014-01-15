@@ -1,19 +1,23 @@
 L.Control.Fullscreen = L.Control.extend({
     options: {
         position: 'topleft',
-        title: 'View Fullscreen'
+        title: {
+            false: 'View Fullscreen',
+            true: 'Exit Fullscreen'
+        }
     },
 
     onAdd: function (map) {
-        var container = L.DomUtil.create('div', 'leaflet-control-fullscreen leaflet-bar leaflet-control'),
-            link = L.DomUtil.create('a', 'leaflet-control-fullscreen-button leaflet-bar-part', container);
+        var container = L.DomUtil.create('div', 'leaflet-control-fullscreen leaflet-bar leaflet-control');
+
+        this.link = L.DomUtil.create('a', 'leaflet-control-fullscreen-button leaflet-bar-part', container);
+        this.link.href = '#';
 
         this._map = map;
+        this._map.on('fullscreenchange', this._toggleTitle, this);
+        this._toggleTitle();
 
-        link.href = '#';
-        link.title = this.options.title;
-
-        L.DomEvent.on(link, 'click', this._click, this);
+        L.DomEvent.on(this.link, 'click', this._click, this);
 
         return container;
     },
@@ -22,12 +26,16 @@ L.Control.Fullscreen = L.Control.extend({
         L.DomEvent.stopPropagation(e);
         L.DomEvent.preventDefault(e);
         this._map.toggleFullscreen();
+    },
+
+    _toggleTitle: function() {
+        this.link.title = this.options.title[this._map.isFullscreen()];
     }
 });
 
 L.Map.include({
     isFullscreen: function () {
-        return this._isFullscreen;
+        return this._isFullscreen || false;
     },
 
     toggleFullscreen: function () {

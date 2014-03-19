@@ -118,7 +118,7 @@ L.Map.addInitHook(function () {
     }
 
     if (fullscreenchange) {
-        this.on('load', function () {
+        this.whenReady(function () {
             L.DomEvent.on(document, fullscreenchange, this._onFullscreenChange, this);
         });
 

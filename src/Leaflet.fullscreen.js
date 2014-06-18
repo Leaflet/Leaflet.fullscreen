@@ -47,7 +47,7 @@ L.Map.include({
                 document.mozCancelFullScreen();
             } else if (document.webkitCancelFullScreen) {
                 document.webkitCancelFullScreen();
-			} else if (document.msExitFullscreen) {
+            } else if (document.msExitFullscreen) {
                 document.msExitFullscreen();
             } else {
                 L.DomUtil.removeClass(container, 'leaflet-pseudo-fullscreen');
@@ -63,8 +63,7 @@ L.Map.include({
                 container.mozRequestFullScreen();
             } else if (container.webkitRequestFullscreen) {
                 container.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-			} else if (container.msRequestFullscreen) {
-				//Messes up the popup content when viewing in an iframe
+            } else if (container.msRequestFullscreen) {
                 container.msRequestFullscreen();
             } else {
                 L.DomUtil.addClass(container, 'leaflet-pseudo-fullscreen');
@@ -90,7 +89,7 @@ L.Map.include({
             document.fullscreenElement ||
             document.mozFullScreenElement ||
             document.webkitFullscreenElement ||
-			document.msFullscreenElement;
+            document.msFullscreenElement;
 
         this._toggleFullscreenClass();
         if (fullscreenElement === this.getContainer()) {

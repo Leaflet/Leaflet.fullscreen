@@ -1,3 +1,7 @@
+## 0.0.3
+
+* Added IE11 native fullscreen support (#27)
+
 ## 0.0.2
 
 * Set appropriate title when fullscreen (#17)

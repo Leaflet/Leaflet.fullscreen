@@ -84,7 +84,10 @@ L.Map.include({
         }
     },
 
-    _onFullscreenChange: function () {
+    _onFullscreenChange: function (e) {
+        if (e.target != this.getContainer())
+            return;
+
         var fullscreenElement =
             document.fullscreenElement ||
             document.mozFullScreenElement ||
@@ -125,12 +128,14 @@ L.Map.addInitHook(function () {
     }
 
     if (fullscreenchange) {
+        var onFullscreenChange = L.bind(this._onFullscreenChange, this);
+
         this.whenReady(function () {
-            L.DomEvent.on(document, fullscreenchange, this._onFullscreenChange, this);
+            L.DomEvent.on(document, fullscreenchange, onFullscreenChange);
         });
 
         this.on('unload', function () {
-            L.DomEvent.off(document, fullscreenchange, this._onFullscreenChange);
+            L.DomEvent.off(document, fullscreenchange, onFullscreenChange);
         });
     }
 });

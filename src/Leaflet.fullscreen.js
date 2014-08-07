@@ -51,9 +51,8 @@ L.Map.include({
                 document.msExitFullscreen();
             } else {
                 L.DomUtil.removeClass(container, 'leaflet-pseudo-fullscreen');
-                this._toggleFullscreenClass();
+                this._setFullscreen(false);
                 this.invalidateSize();
-                this._isFullscreen = false;
                 this.fire('fullscreenchange');
             }
         } else {
@@ -67,39 +66,35 @@ L.Map.include({
                 container.msRequestFullscreen();
             } else {
                 L.DomUtil.addClass(container, 'leaflet-pseudo-fullscreen');
-                this._toggleFullscreenClass();
+                this._setFullscreen(true);
                 this.invalidateSize();
-                this._isFullscreen = true;
                 this.fire('fullscreenchange');
             }
         }
     },
 
-    _toggleFullscreenClass: function() {
+    _setFullscreen: function(fullscreen) {
+        this._isFullscreen = fullscreen;
         var container = this.getContainer();
-        if (this.isFullscreen()) {
-            L.DomUtil.removeClass(container, 'leaflet-fullscreen-on');
-        } else {
+        if (fullscreen) {
             L.DomUtil.addClass(container, 'leaflet-fullscreen-on');
+        } else {
+            L.DomUtil.removeClass(container, 'leaflet-fullscreen-on');
         }
     },
 
     _onFullscreenChange: function (e) {
-        if (e.target != this.getContainer())
-            return;
-
         var fullscreenElement =
             document.fullscreenElement ||
             document.mozFullScreenElement ||
             document.webkitFullscreenElement ||
             document.msFullscreenElement;
 
-        this._toggleFullscreenClass();
-        if (fullscreenElement === this.getContainer()) {
-            this._isFullscreen = true;
+        if (fullscreenElement === this.getContainer() && !this._isFullscreen) {
+            this._setFullscreen(true);
             this.fire('fullscreenchange');
-        } else if (this._isFullscreen) {
-            this._isFullscreen = false;
+        } else if (fullscreenElement !== this.getContainer() && this._isFullscreen) {
+            this._setFullscreen(false);
             this.fire('fullscreenchange');
         }
     }

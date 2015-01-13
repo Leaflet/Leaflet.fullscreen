@@ -1,6 +1,6 @@
 {
   "name": "leaflet-fullscreen",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A fullscreen control for Leaflet",
   "main": "src/Leaflet.fullscreen.js",
   "directories": {

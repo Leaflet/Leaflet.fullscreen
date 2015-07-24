@@ -10,14 +10,16 @@ L.Control.Fullscreen = L.Control.extend({
     onAdd: function (map) {
         var container = L.DomUtil.create('div', 'leaflet-control-fullscreen leaflet-bar leaflet-control');
 
-        this.link = L.DomUtil.create('a', 'leaflet-control-fullscreen-button leaflet-bar-part', container);
-        this.link.href = '#';
+        if (map.options.fullscreenLink) {
+            this.link = L.DomUtil.create('a', 'leaflet-control-fullscreen-button leaflet-bar-part', container);
+            this.link.href = '#';
 
-        this._map = map;
-        this._map.on('fullscreenchange', this._toggleTitle, this);
-        this._toggleTitle();
+            this._map = map;
+            this._map.on('fullscreenchange', this._toggleTitle, this);
+            this._toggleTitle();
 
-        L.DomEvent.on(this.link, 'click', this._click, this);
+            L.DomEvent.on(this.link, 'click', this._click, this);
+        }
 
         return container;
     },
@@ -101,7 +103,8 @@ L.Map.include({
 });
 
 L.Map.mergeOptions({
-    fullscreenControl: false
+    fullscreenControl: false,
+    fullscreenLink: true
 });
 
 L.Map.addInitHook(function () {

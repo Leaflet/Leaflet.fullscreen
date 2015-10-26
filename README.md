@@ -1,6 +1,10 @@
 ## Leaflet.fullscreen
 A HTML5 fullscreen plugin for Leaflet.
 
+## Install
+
+To install the plugin run `npm install leaflet-fullscreen` via command line in your project. You must also require this in your project like so: `var leaflet-draw = require('leaflet-fullscreen');`
+
 ### Usage
 
 ``` js

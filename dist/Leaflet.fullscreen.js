@@ -9,8 +9,9 @@ L.Control.Fullscreen = L.Control.extend({
 
     onAdd: function (map) {
         var container = L.DomUtil.create('div', 'leaflet-control-fullscreen leaflet-bar leaflet-control');
+        var buttonClassNames = 'leaflet-control-fullscreen-button leaflet-bar-part' + L.Control.Fullscreen.buttonClassName;
 
-        this.link = L.DomUtil.create('a', 'leaflet-control-fullscreen-button leaflet-bar-part', container);
+        this.link = L.DomUtil.create('a', buttonClassNames, container);
         this.link.href = '#';
 
         this._map = map;
@@ -32,6 +33,10 @@ L.Control.Fullscreen = L.Control.extend({
         this.link.title = this.options.title[this._map.isFullscreen()];
     }
 });
+
+L.Control.Fullscreen.setButtonClass = function(className) {
+    this.buttonClassName = className ? ' ' + className : '';
+};
 
 L.Map.include({
     isFullscreen: function () {

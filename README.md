@@ -5,7 +5,8 @@ A HTML5 fullscreen plugin for Leaflet.
 
 ``` js
 var map = new L.Map('map', {
-    fullscreenControl: true
+    fullscreenControl: true,
+    fullscreenPseudo: false // if true, fullscreen to page width and height
 });
 ```
 

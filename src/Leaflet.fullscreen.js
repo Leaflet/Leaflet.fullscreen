@@ -40,7 +40,15 @@ L.Map.include({
 
     toggleFullscreen: function () {
         var container = this.getContainer();
+
         if (this.isFullscreen()) {
+
+            if (typeof this.options.fullscreenControl == 'object' &&
+                this.options.fullscreenControl.pseudoFullscreen) {
+                this._disablePseudoFullscreen(container);
+                return;
+            }
+
             if (document.exitFullscreen) {
                 document.exitFullscreen();
             } else if (document.mozCancelFullScreen) {
@@ -50,12 +58,18 @@ L.Map.include({
             } else if (document.msExitFullscreen) {
                 document.msExitFullscreen();
             } else {
-                L.DomUtil.removeClass(container, 'leaflet-pseudo-fullscreen');
-                this._setFullscreen(false);
-                this.invalidateSize();
-                this.fire('fullscreenchange');
+
+                this._disablePseudoFullscreen(container);
             }
+
         } else {
+
+            if (typeof this.options.fullscreenControl == 'object' &&
+                this.options.fullscreenControl.pseudoFullscreen) {
+                this._enablePseudoFullscreen(container);
+                return;
+            }
+
             if (container.requestFullscreen) {
                 container.requestFullscreen();
             } else if (container.mozRequestFullScreen) {
@@ -65,12 +79,24 @@ L.Map.include({
             } else if (container.msRequestFullscreen) {
                 container.msRequestFullscreen();
             } else {
-                L.DomUtil.addClass(container, 'leaflet-pseudo-fullscreen');
-                this._setFullscreen(true);
-                this.invalidateSize();
-                this.fire('fullscreenchange');
+                this._enablePseudoFullscreen(container);
             }
         }
+
+    },
+
+    _enablePseudoFullscreen: function (container) {
+        L.DomUtil.addClass(container, 'leaflet-pseudo-fullscreen');
+        this._setFullscreen(true);
+        this.invalidateSize();
+        this.fire('fullscreenchange');
+    },
+
+    _disablePseudoFullscreen: function (container) {
+        L.DomUtil.removeClass(container, 'leaflet-pseudo-fullscreen');
+        this._setFullscreen(false);
+        this.invalidateSize();
+        this.fire('fullscreenchange');
     },
 
     _setFullscreen: function(fullscreen) {

@@ -43,7 +43,8 @@ L.Map.include({
 
         if (this.isFullscreen()) {
 
-            if (this.options.fullscreenPseudo) {
+            if (typeof this.options.fullscreenControl == 'object' &&
+                this.options.fullscreenControl.pseudoFullscreen) {
                 this._disablePseudoFullscreen(container);
                 return;
             }
@@ -63,7 +64,8 @@ L.Map.include({
 
         } else {
 
-            if (this.options.fullscreenPseudo) {
+            if (typeof this.options.fullscreenControl == 'object' &&
+                this.options.fullscreenControl.pseudoFullscreen) {
                 this._enablePseudoFullscreen(container);
                 return;
             }
@@ -125,8 +127,7 @@ L.Map.include({
 });
 
 L.Map.mergeOptions({
-    fullscreenControl: false,
-    fullscreenPseudo: false
+    fullscreenControl: false
 });
 
 L.Map.addInitHook(function () {

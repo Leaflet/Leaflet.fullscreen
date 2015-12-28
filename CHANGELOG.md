@@ -1,3 +1,8 @@
+## 1.0.1
+
+* Fix package.json main
+* Switch license to ISC
+
 ## 1.0.0
 
 * pseudoFullscreen option

@@ -24,6 +24,6 @@
     "jshint": "2.3.0"
   },
   "author": "John Firebaugh",
-  "license": "BSD",
+  "license": "ISC",
   "readmeFilename": "README.md"
 }

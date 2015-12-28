@@ -1,3 +1,15 @@
+## 1.0.0
+
+* pseudoFullscreen option
+* Fix project structure and CSS
+
+## 0.0.4
+
+* Fix for multiple maps on one page
+* Fix cancel full screen mode in Firefox (#29)
+* Center icon on touch devices (#31)
+* Fix IE8 support (#32)
+
 ## 0.0.3
 
 * Added IE11 native fullscreen support (#27)

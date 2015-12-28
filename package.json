@@ -7,11 +7,11 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "jshint index.js"
+    "test": "jshint dist/Leaflet.fullscreen.js"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mapbox/Leaflet.fullscreen.git"
+    "url": "git://github.com/Leaflet/Leaflet.fullscreen.git"
   },
   "keywords": [
     "leaflet",
@@ -25,6 +25,5 @@
   },
   "author": "John Firebaugh",
   "license": "BSD",
-  "gitHead": "440a832850e205f4ab30ef185c905d153eaec14e",
   "readmeFilename": "README.md"
 }

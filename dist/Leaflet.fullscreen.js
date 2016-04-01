@@ -4,7 +4,8 @@ L.Control.Fullscreen = L.Control.extend({
         title: {
             'false': 'View Fullscreen',
             'true': 'Exit Fullscreen'
-        }
+        },
+        pseudoFullscreen: false
     },
 
     onAdd: function (map) {
@@ -17,6 +18,8 @@ L.Control.Fullscreen = L.Control.extend({
         this._map.on('fullscreenchange', this._toggleTitle, this);
         this._toggleTitle();
 
+        this._map.options.pseudoFullscreen = this.options.pseudoFullscreen;
+
         L.DomEvent.on(this.link, 'click', this._click, this);
 
         return container;
@@ -25,7 +28,7 @@ L.Control.Fullscreen = L.Control.extend({
     _click: function (e) {
         L.DomEvent.stopPropagation(e);
         L.DomEvent.preventDefault(e);
-        this._map.toggleFullscreen(this.options);
+        this._map.toggleFullscreen();
     },
 
     _toggleTitle: function() {
@@ -38,10 +41,10 @@ L.Map.include({
         return this._isFullscreen || false;
     },
 
-    toggleFullscreen: function (options) {
+    toggleFullscreen: function () {
         var container = this.getContainer();
         if (this.isFullscreen()) {
-            if (options && options.pseudoFullscreen) {
+            if (this.options.pseudoFullscreen) {
                 this._disablePseudoFullscreen(container);
             } else if (document.exitFullscreen) {
                 document.exitFullscreen();
@@ -55,7 +58,7 @@ L.Map.include({
                 this._disablePseudoFullscreen(container);
             }
         } else {
-            if (options && options.pseudoFullscreen) {
+            if (this.options.pseudoFullscreen) {
                 this._enablePseudoFullscreen(container);
             } else if (container.requestFullscreen) {
                 container.requestFullscreen();

@@ -75,14 +75,12 @@ L.Map.include({
     _enablePseudoFullscreen: function (container) {
         L.DomUtil.addClass(container, 'leaflet-pseudo-fullscreen');
         this._setFullscreen(true);
-        this.invalidateSize();
         this.fire('fullscreenchange');
     },
 
     _disablePseudoFullscreen: function (container) {
         L.DomUtil.removeClass(container, 'leaflet-pseudo-fullscreen');
         this._setFullscreen(false);
-        this.invalidateSize();
         this.fire('fullscreenchange');
     },
 

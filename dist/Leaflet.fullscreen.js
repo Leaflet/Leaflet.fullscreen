@@ -94,6 +94,7 @@ L.Map.include({
         } else {
             L.DomUtil.removeClass(container, 'leaflet-fullscreen-on');
         }
+        this._map.invalidateSize();
     },
 
     _onFullscreenChange: function (e) {

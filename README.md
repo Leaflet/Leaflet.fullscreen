@@ -46,3 +46,7 @@ Leaflet.fullscreen is [available through the Mapbox Plugin CDN](https://www.mapb
 
 __ProTip__ You may want to install `watch` so you can run `watch make`
 without needing to execute make on every change.
+
+### Supported Leaflet Versions
+
+Leaflet 1.0 and later is supported. Earlier versions may work, but are not tested.

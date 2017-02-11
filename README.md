@@ -13,6 +13,16 @@ var map = new L.Map('map', {
 });
 ```
 
+In case you want to use your own 'fullScreen' button:
+
+``` js
+var map = new L.Map('map', {
+    fullscreenControl: true,
+    fullscreenLink: false
+});
+```
+
+
 ### API
 
 ``` js

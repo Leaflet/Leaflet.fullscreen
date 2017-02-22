@@ -3,7 +3,10 @@ A HTML5 fullscreen plugin for Leaflet.
 
 ### Usage
 
+To provide a button for toggling fullscreen on and off:
+
 ``` js
+// Create a new map with a fullscreen button:
 var map = new L.Map('map', {
     fullscreenControl: true,
     // OR
@@ -11,9 +14,12 @@ var map = new L.Map('map', {
         pseudoFullscreen: false // if true, fullscreen to page width and height
     }
 });
+
+// or, add to an existing map:
+map.addControl(new L.Control.Fullscreen());
 ```
 
-### API
+The plugin also adds several methods to `L.Map` which are always available, even if you choose not to use the fullscreen button:
 
 ``` js
 map.isFullscreen() // Is the map fullscreen?
@@ -27,8 +33,6 @@ map.on('fullscreenchange', function () {
         console.log('exited fullscreen');
     }
 });
-
-L.Control.Fullscreen // A fullscreen button. Or use the `{fullscreenControl: true}` option when creating L.Map.
 ```
 
 ### Including via CDN

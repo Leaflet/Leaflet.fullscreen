@@ -1,12 +1,10 @@
 (function (factory) {
-    var L;
     if (typeof define === 'function' && define.amd) {
         // AMD
         define(['leaflet'], factory);
     } else if (typeof module !== 'undefined') {
         // Node/CommonJS
-        L = require('leaflet');
-        module.exports = factory(L);
+        module.exports = factory(require('leaflet'));
     } else {
         // Browser globals
         if (typeof window.L === 'undefined') {

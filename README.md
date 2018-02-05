@@ -35,6 +35,19 @@ map.on('fullscreenchange', function () {
 });
 ```
 
+### Localization
+
+To change fullscreen control text:
+
+``` js
+map.addControl(new L.Control.Fullscreen({
+    title: {
+        'false': 'View Fullscreen',
+        'true': 'Exit Fullscreen'
+    }
+}));
+```
+
 ### Including via CDN
 
 Leaflet.fullscreen is [available through the Mapbox Plugin CDN](https://www.mapbox.com/mapbox.js/plugins/#leaflet-fullscreen) - just copy this include:

@@ -19,7 +19,8 @@
             title: {
                 'false': 'View Fullscreen',
                 'true': 'Exit Fullscreen'
-            }
+            },
+            fullscreenElement: false
         },
 
         onAdd: function (map) {
@@ -54,7 +55,7 @@
         },
 
         toggleFullscreen: function (options) {
-            var container = this.getContainer();
+            var container = options.fullscreenElement ? options.fullscreenElement : this.getContainer();
             if (this.isFullscreen()) {
                 if (options && options.pseudoFullscreen) {
                     this._disablePseudoFullscreen(container);

@@ -20,7 +20,7 @@
     "client"
   ],
   "devDependencies": {
-    "uglify-js": "2.4.3",
+    "uglify-js": "3.6.8",
     "jshint": "2.3.0"
   },
   "author": "John Firebaugh",

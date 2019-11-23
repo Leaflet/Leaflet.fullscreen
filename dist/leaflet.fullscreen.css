@@ -1,5 +1,6 @@
 .leaflet-control-fullscreen a {
-  background:#fff url(fullscreen.png) no-repeat 0 0;
+  background:#fff no-repeat 0 0;
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg version='1.1' viewBox='0 0 26 52' width='26' height='52' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg display='none'%3E%3Crect width='26' height='52' color='%23000000' display='inline' fill='%23f2f2f2'/%3E%3Crect y='26' width='26' height='26' color='%23000000' display='inline' fill='%23e6e6e6'/%3E%3C/g%3E%3Cg transform='translate(0 -1000.4)'%3E%3Cuse transform='translate(0,26)' width='100%25' height='100%25' xlink:href='%23rect15634'/%3E%3Cuse transform='translate(0,26)' width='100%25' height='100%25' xlink:href='%23path15639'/%3E%3Cuse transform='translate(0,26)' width='100%25' height='100%25' xlink:href='%23path16061'/%3E%3Cuse transform='translate(0,26)' width='100%25' height='100%25' xlink:href='%23path16059'/%3E%3Cpath id='rect15634' transform='translate(0 1000.4)' d='m5 15v6h6v-2h-4v-4z' color='%23000000' fill='%23404040'/%3E%3Cpath id='path15639' transform='translate(0 1000.4)' d='m21 15v6h-6v-2h4v-4z' color='%23000000' fill='%23404040'/%3E%3Cpath d='m10 1037.4v4l1 1h4l1-1v-4l-1-1h-4z' color='%23000000' fill='%23404040'/%3E%3Cpath id='path16059' d='m5 1011.4v-6h6v2h-4v4z' color='%23000000' fill='%23404040'/%3E%3Cpath id='path16061' d='m21 1011.4v-6h-6v2h4v4z' color='%23000000' fill='%23404040'/%3E%3C/g%3E%3C/svg%3E%0A");
   background-size:26px 52px;
   }
   .leaflet-touch .leaflet-control-fullscreen a {
@@ -29,12 +30,4 @@
   top:0!important;
   left:0!important;
   z-index:99999;
-  }
-
-@media
-  (-webkit-min-device-pixel-ratio:2),
-  (min-resolution:192dpi) {
-    .leaflet-control-fullscreen a {
-      background-image:url(fullscreen@2x.png);
-    }
   }

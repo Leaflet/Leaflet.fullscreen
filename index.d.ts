@@ -7,10 +7,10 @@ import {Control, ControlOptions} from 'leaflet';
 
 declare module 'leaflet' {
     interface MapOptions {
-        fullscreenControl?: boolean | fullscreenOptions;
+        fullscreenControl?: boolean | FullscreenOptions;
     }
 
-    interface fullscreenOptions extends ControlOptions {
+    interface FullscreenOptions extends ControlOptions {
         pseudoFullscreen?: boolean
         title?: {
             'false': string,
@@ -24,13 +24,13 @@ declare module 'leaflet' {
     }
 
     namespace control {
-        function fullscreen(options: fullscreenOptions): Control.Fullscreen;
+        function fullscreen(options: FullscreenOptions): Control.Fullscreen;
         }
     
     namespace Control {
         export class Fullscreen extends Control{
-            constructor (options: fullscreenOptions);
-            options: fullscreenOptions;
+            constructor (options: FullscreenOptions);
+            options: FullscreenOptions;
         }
     }
 

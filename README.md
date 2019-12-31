@@ -67,7 +67,7 @@ npm install @runette/leaflet-fullscreen
 This version includes a `index.d.ts` with Typescript type definitions for :
 
 ```typescript
-interface fullscreenOptions extends ControlOptions {}
+interface FullscreenOptions extends ControlOptions {}
 ```
 and extensions to the following with the additional properties and methods
 ```typescript

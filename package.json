@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Leaflet/Leaflet.fullscreen.git"
+    "url": "git://https://github.com/runette/Leaflet.fullscreen.git"
   },
   "keywords": [
     "leaflet",

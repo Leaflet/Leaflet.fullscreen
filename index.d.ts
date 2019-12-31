@@ -17,6 +17,12 @@ declare module 'leaflet' {
             'true': string
         }
     }
+
+    interface Map {
+        isfullscreen(): boolean;
+        toggleFullscreen(): void;
+    }
+
     namespace control {
         function fullscreen(options: fullscreenOptions): Control.Fullscreen;
         }

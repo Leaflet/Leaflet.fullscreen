@@ -37,6 +37,10 @@
             return container;
         },
 
+        onRemove: function (map) {
+            map.off('fullscreenchange', this._toggleTitle, this);
+        },
+
         _click: function (e) {
             L.DomEvent.stopPropagation(e);
             L.DomEvent.preventDefault(e);

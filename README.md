@@ -1,6 +1,14 @@
 ## Leaflet.fullscreen
 A HTML5 fullscreen plugin for Leaflet.
 
+> Reason for the @runette fork : The root repo is not being actively  managed. This fork starts with version 1.0.3
+>
+> changes :
+>
+>* included index.d.ts (#106)
+>* changed the icon to SVG (#102 and #103)
+>* remove fullscreen listener (#100)
+
 ### Usage
 
 To provide a button for toggling fullscreen on and off:
@@ -48,21 +56,29 @@ map.addControl(new L.Control.Fullscreen({
 }));
 ```
 
-### Including via CDN
+### Including via NPM
 
-Leaflet.fullscreen is [available through the Mapbox Plugin CDN](https://www.mapbox.com/mapbox.js/plugins/#leaflet-fullscreen) - just copy this include:
-
-```html
-<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+```sh
+npm install @runette/leaflet-fullscreen
 ```
 
-### Building
+### Type definitions
 
-    npm install && make
+This version includes a `index.d.ts` with Typescript type definitions for :
 
-__ProTip__ You may want to install `watch` so you can run `watch make`
-without needing to execute make on every change.
+```typescript
+interface fullscreenOptions extends ControlOptions {}
+```
+and extensions to the following with the additional properties and methods
+```typescript
+    interface Map {}
+
+    namespace control  {}
+
+    namespace Control {}
+```
+
+
 
 ### Supported Leaflet Versions
 

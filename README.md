@@ -8,6 +8,8 @@ A HTML5 fullscreen plugin for Leaflet.
 >* included index.d.ts (#106)
 >* changed the icon to SVG (#102 and #103)
 >* remove fullscreen listener (#100)
+>
+> Breaking Changes : this update changes the type `fullscreenOptions` to `FullscreenOptions`. Do not load @types/leaflet-fullscreen
 
 ### Usage
 

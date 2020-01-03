@@ -1,3 +1,7 @@
+##1.0.4
+
+* reinstated backward compatibility with `fullscreenOptions`
+
 ## 1.0.3
 
 * included index.d.ts (#106)

@@ -1,6 +1,6 @@
 {
   "name": "@runette/leaflet-fullscreen",
-  "version": "1.0.3a",
+  "version": "1.0.4",
   "description": "A fullscreen control for Leaflet",
   "main": "dist/Leaflet.fullscreen.js",
   "directories": {

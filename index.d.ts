@@ -18,6 +18,8 @@ declare module 'leaflet' {
         }
     }
 
+    type fullscreenOptions = FullscreenOptions;
+
     interface Map {
         isfullscreen(): boolean;
         toggleFullscreen(): void;

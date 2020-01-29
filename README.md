@@ -25,15 +25,11 @@ The plugin also adds several methods to `L.Map` which are always available, even
 map.isFullscreen() // Is the map fullscreen?
 map.toggleFullscreen() // Either go fullscreen, or cancel the existing fullscreen.
 
-// `fullscreenchange` Event that's fired when entering or exiting fullscreen.
-map.on('fullscreenchange', function () {
+// `enterFullscreen` Event that's fired when entering  fullscreen.
+map.on('enterFullscreen', function () {
     if (map.isFullscreen()) {
         console.log('entered fullscreen');
-    } else {
-        console.log('exited fullscreen');
-    }
 });
-```
 
 ### Localization
 

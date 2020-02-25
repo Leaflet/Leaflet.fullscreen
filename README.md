@@ -5,6 +5,7 @@ A HTML5 fullscreen plugin for Leaflet.
 >
 > changes :
 >
+>* Remove onFullscrennchange and replpace with enterFullscreen event in README (#108)
 >* included index.d.ts (#106)
 >* changed the icon to SVG (#102 and #103)
 >* remove fullscreen listener (#100)
@@ -35,13 +36,10 @@ The plugin also adds several methods to `L.Map` which are always available, even
 map.isFullscreen() // Is the map fullscreen?
 map.toggleFullscreen() // Either go fullscreen, or cancel the existing fullscreen.
 
-// `fullscreenchange` Event that's fired when entering or exiting fullscreen.
-map.on('fullscreenchange', function () {
+// `enterFullscreen` Event that's fired when entering  fullscreen.
+map.on('enterFullscreen', function () {
     if (map.isFullscreen()) {
         console.log('entered fullscreen');
-    } else {
-        console.log('exited fullscreen');
-    }
 });
 ```
 

@@ -5,7 +5,7 @@ A HTML5 fullscreen plugin for Leaflet.
 >
 > changes :
 >
->* Remove onFullscrennchange and replpace with enterFullscreen event in README (#108)
+>* Remove onFullscreenchange and replace with enterFullscreen event in README (#108)
 >* included index.d.ts (#106)
 >* changed the icon to SVG (#102 and #103)
 >* remove fullscreen listener (#100)

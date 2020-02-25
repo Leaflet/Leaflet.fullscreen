@@ -41,7 +41,6 @@ map.on('enterFullscreen', function () {
     if (map.isFullscreen()) {
         console.log('entered fullscreen');
 });
-```
 
 ### Localization
 

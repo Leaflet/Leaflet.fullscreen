@@ -49,8 +49,8 @@ To change fullscreen control text:
 ``` js
 map.addControl(new L.Control.Fullscreen({
     title: {
-        'false': 'View Fullscreen',
-        'true': 'Exit Fullscreen'
+        'false': 'View fullscreen',
+        'true': 'Exit fullscreen'
     }
 }));
 ```

@@ -1,4 +1,9 @@
-##1.0.4
+## 1.0.5
+
+* Add `role="button"` to the control, and lowercase "fullscreen" in the `title`
+attribute to align with Leaflet's core controls.
+
+## 1.0.4
 
 * reinstated backward compatibility with `fullscreenOptions`
 

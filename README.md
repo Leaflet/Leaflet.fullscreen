@@ -9,8 +9,9 @@ A HTML5 fullscreen plugin for Leaflet.
 >* included index.d.ts (#106)
 >* changed the icon to SVG (#102 and #103)
 >* remove fullscreen listener (#100)
+>* Accessibility Fix (#2)
+>* Fix Typo in index.d.ts (#3)
 >
-
 
 ### Usage
 

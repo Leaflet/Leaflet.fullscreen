@@ -1,7 +1,9 @@
 ## 1.0.5
 
 * Add `role="button"` to the control, and lowercase "fullscreen" in the `title`
-attribute to align with Leaflet's core controls.
+attribute to align with Leaflet's core controls. (#2)
+
+* Correct Typo in index.d.ts (#3)
 
 ## 1.0.4
 

@@ -59,11 +59,17 @@ Leaflet.fullscreen is [available through the Mapbox Plugin CDN](https://www.mapb
 
 ### Building
 
-    npm install && make
-
-__ProTip__ You may want to install `watch` so you can run `watch make`
-without needing to execute make on every change.
+    npm install
+    npm run test
+    npm run uglifyjs
+    npm run sass
 
 ### Supported Leaflet Versions
 
 Leaflet 1.0 and later is supported. Earlier versions may work, but are not tested.
+
+### License
+
+ISC
+
+SVG icons from [Font Awesome v5.15.4](https://github.com/FortAwesome/Font-Awesome/releases/tag/5.15.4): [Creative Commons Attribution 4.0](https://fontawesome.com/license/free)

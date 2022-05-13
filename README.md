@@ -4,7 +4,8 @@ A HTML5 fullscreen plugin for Leaflet.
 > Reason for the @runette fork : The root repo is not being actively  managed. This fork starts with version 1.0.3
 >
 > changes :
->
+
+>* Rework Legacy PNG Icons with Font Awesome SVG #118
 >* Remove onFullscreenchange and replace with enterFullscreen event in README (#108)
 >* included index.d.ts (#106)
 >* changed the icon to SVG (#102 and #103)

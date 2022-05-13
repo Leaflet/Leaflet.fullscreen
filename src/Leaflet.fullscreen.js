@@ -29,6 +29,8 @@
             this.link.href = '#';
             this.link.setAttribute('role', 'button');
 
+            this.icon = L.DomUtil.create('span', 'leaflet-control-fullscreen-icon', this.link);
+
             this._map = map;
             this._map.on('fullscreenchange', this._toggleTitle, this);
             this._toggleTitle();

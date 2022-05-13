@@ -78,8 +78,17 @@ and extensions to the following with the additional properties and methods
     namespace Control {}
 ```
 
-
+    npm install
+    npm run test
+    npm run uglifyjs
+    npm run sass
 
 ### Supported Leaflet Versions
 
 Leaflet 1.0 and later is supported. Earlier versions may work, but are not tested.
+
+### License
+
+ISC
+
+SVG icons from [Font Awesome v5.15.4](https://github.com/FortAwesome/Font-Awesome/releases/tag/5.15.4): [Creative Commons Attribution 4.0](https://fontawesome.com/license/free)

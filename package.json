@@ -7,7 +7,9 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "jshint dist/Leaflet.fullscreen.js"
+    "test": "jshint src/Leaflet.fullscreen.js",
+    "uglifyjs": "uglifyjs src/Leaflet.fullscreen.js > dist/Leaflet.fullscreen.min.js",
+    "sass": "sass -s compressed src/Leaflet.fullscreen.scss dist/Leaflet.fullscreen.min.css"
   },
   "repository": {
     "type": "git",
@@ -20,8 +22,9 @@
     "client"
   ],
   "devDependencies": {
-    "uglify-js": "2.4.3",
-    "jshint": "2.3.0"
+    "jshint": "^2.13.1",
+    "sass": "^1.43.5",
+    "uglify-js": "^3.14.3"
   },
   "author": "John Firebaugh",
   "license": "ISC",

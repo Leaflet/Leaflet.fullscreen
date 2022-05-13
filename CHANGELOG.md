@@ -4,6 +4,10 @@ Updates this fork with PR #118 from the origin:
 
 Rework Legacy PNG Icons with Font Awesome SVG 
 
+NOTE - this release includes the following breaking change :
+
+`dist/Leaflet.fullscreen.js` is removed and `src/Leaflet.fullscreen.js` added. Use `dist/Leaflet..fullscreen.min.js` in your builds.
+
 ## 1.0.5
 
 * Add `role="button"` to the control, and lowercase "fullscreen" in the `title`

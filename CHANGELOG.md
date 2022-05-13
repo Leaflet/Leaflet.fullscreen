@@ -1,6 +1,6 @@
 ## 1.0.6
 
-Updates this fork with PR #118 from the origin:
+Updates this fork with [PR #118](https://github.com/Leaflet/Leaflet.fullscreen/pull/118) from the origin:
 
 Rework Legacy PNG Icons with Font Awesome SVG 
 

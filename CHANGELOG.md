@@ -1,3 +1,9 @@
+## 1.0.6
+
+Updates this fork with PR #118 from the origin:
+
+Rework Legacy PNG Icons with Font Awesome SVG 
+
 ## 1.0.5
 
 * Add `role="button"` to the control, and lowercase "fullscreen" in the `title`
